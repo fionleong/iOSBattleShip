@@ -7,21 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5B3220A21DE017250000EBDC /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3220A11DE017250000EBDC /* MainViewController.swift */; };
+		5B3220A41DE05DE80000EBDC /* shiplocation.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5B3220A31DE05DE80000EBDC /* shiplocation.txt */; };
+		5B580C8B1DDC20D5002317B0 /* GridCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B580C8A1DDC20D5002317B0 /* GridCollectionViewCell.swift */; };
+		5B580CAD1DDC5D13002317B0 /* EnemyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B580CAC1DDC5D13002317B0 /* EnemyViewController.swift */; };
 		5BAEB03C1DD6B5F100E23D91 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAEB03B1DD6B5F100E23D91 /* AppDelegate.swift */; };
-		5BAEB03E1DD6B5F100E23D91 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAEB03D1DD6B5F100E23D91 /* ViewController.swift */; };
+		5BAEB03E1DD6B5F100E23D91 /* MyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAEB03D1DD6B5F100E23D91 /* MyViewController.swift */; };
 		5BAEB0411DD6B5F100E23D91 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BAEB03F1DD6B5F100E23D91 /* Main.storyboard */; };
 		5BAEB0431DD6B5F100E23D91 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5BAEB0421DD6B5F100E23D91 /* Assets.xcassets */; };
 		5BAEB0461DD6B5F100E23D91 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BAEB0441DD6B5F100E23D91 /* LaunchScreen.storyboard */; };
+		5BBE69601DE1221100A0FC7D /* SharingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBE695F1DE1221100A0FC7D /* SharingManager.swift */; };
+		5BE397531DDE962F00E9B036 /* GridModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE397521DDE962F00E9B036 /* GridModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5B3220A11DE017250000EBDC /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		5B3220A31DE05DE80000EBDC /* shiplocation.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = shiplocation.txt; path = ../../shiplocation.txt; sourceTree = "<group>"; };
+		5B580C8A1DDC20D5002317B0 /* GridCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridCollectionViewCell.swift; sourceTree = "<group>"; };
+		5B580CAC1DDC5D13002317B0 /* EnemyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnemyViewController.swift; sourceTree = "<group>"; };
 		5BAEB0381DD6B5F100E23D91 /* BattleShipiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BattleShipiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BAEB03B1DD6B5F100E23D91 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5BAEB03D1DD6B5F100E23D91 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		5BAEB03D1DD6B5F100E23D91 /* MyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyViewController.swift; sourceTree = "<group>"; };
 		5BAEB0401DD6B5F100E23D91 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5BAEB0421DD6B5F100E23D91 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5BAEB0451DD6B5F100E23D91 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5BAEB0471DD6B5F100E23D91 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5BBE695F1DE1221100A0FC7D /* SharingManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharingManager.swift; sourceTree = "<group>"; };
+		5BE397521DDE962F00E9B036 /* GridModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,12 +66,18 @@
 		5BAEB03A1DD6B5F100E23D91 /* BattleShipiOS */ = {
 			isa = PBXGroup;
 			children = (
+				5B3220A11DE017250000EBDC /* MainViewController.swift */,
+				5B580C8A1DDC20D5002317B0 /* GridCollectionViewCell.swift */,
 				5BAEB03B1DD6B5F100E23D91 /* AppDelegate.swift */,
-				5BAEB03D1DD6B5F100E23D91 /* ViewController.swift */,
+				5BAEB03D1DD6B5F100E23D91 /* MyViewController.swift */,
+				5B580CAC1DDC5D13002317B0 /* EnemyViewController.swift */,
 				5BAEB03F1DD6B5F100E23D91 /* Main.storyboard */,
+				5BE397521DDE962F00E9B036 /* GridModel.swift */,
+				5BBE695F1DE1221100A0FC7D /* SharingManager.swift */,
 				5BAEB0421DD6B5F100E23D91 /* Assets.xcassets */,
 				5BAEB0441DD6B5F100E23D91 /* LaunchScreen.storyboard */,
 				5BAEB0471DD6B5F100E23D91 /* Info.plist */,
+				5B3220A31DE05DE80000EBDC /* shiplocation.txt */,
 			);
 			path = BattleShipiOS;
 			sourceTree = "<group>";
@@ -91,7 +109,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0800;
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = "Fion Leong";
 				TargetAttributes = {
 					5BAEB0371DD6B5F000E23D91 = {
@@ -126,6 +144,7 @@
 				5BAEB0461DD6B5F100E23D91 /* LaunchScreen.storyboard in Resources */,
 				5BAEB0431DD6B5F100E23D91 /* Assets.xcassets in Resources */,
 				5BAEB0411DD6B5F100E23D91 /* Main.storyboard in Resources */,
+				5B3220A41DE05DE80000EBDC /* shiplocation.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -136,8 +155,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5BAEB03E1DD6B5F100E23D91 /* ViewController.swift in Sources */,
+				5BE397531DDE962F00E9B036 /* GridModel.swift in Sources */,
+				5BAEB03E1DD6B5F100E23D91 /* MyViewController.swift in Sources */,
+				5BBE69601DE1221100A0FC7D /* SharingManager.swift in Sources */,
+				5B580CAD1DDC5D13002317B0 /* EnemyViewController.swift in Sources */,
+				5B3220A21DE017250000EBDC /* MainViewController.swift in Sources */,
 				5BAEB03C1DD6B5F100E23D91 /* AppDelegate.swift in Sources */,
+				5B580C8B1DDC20D5002317B0 /* GridCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -181,6 +205,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -231,6 +256,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -299,6 +325,7 @@
 				5BAEB04C1DD6B5F100E23D91 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
