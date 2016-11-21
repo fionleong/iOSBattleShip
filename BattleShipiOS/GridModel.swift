@@ -49,8 +49,7 @@ class GridModel {
         // get the opponent's shiplocation #
         if (currentPlayer == 1)
         {
-            SharingManager.sharedInstance.player1GridUpdate.append(index)
-            print("P1Grid = \(SharingManager.sharedInstance.player1GridUpdate)")
+            SharingManager.sharedInstance.player2GridUpdate.append(index)
             for i in currentShipLocationStringArray {
                 if (i == String(index))
                 {
@@ -63,8 +62,7 @@ class GridModel {
         }
         else if (currentPlayer == 2)
         {
-            SharingManager.sharedInstance.player2GridUpdate.append(index)
-            print("P2Grid = \(SharingManager.sharedInstance.player2GridUpdate)")
+            SharingManager.sharedInstance.player1GridUpdate.append(index)
             for i in currentShipLocationStringArray {
                 if (i == String(index))
                 {
@@ -74,22 +72,24 @@ class GridModel {
                     return "Hit"
                 }
             }
-            
         }
         print("Missed")
         return "Missed"
     }
     
     
-    func checkScore() {
+    func checkScore() -> Int {
         if (SharingManager.sharedInstance.player1Life == 0)
         {
             // Display an alert that Player 2 won
+            return 2
         }
         
         if (SharingManager.sharedInstance.player2Life == 0)
         {
             // Display an alert that Player 1 won
+            return 1
         }
+        return 0
     }
 }

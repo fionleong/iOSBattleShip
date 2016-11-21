@@ -37,11 +37,50 @@ class EnemyViewController: UIViewController, UICollectionViewDataSource, UIColle
         cell.layer.borderColor = UIColor.black.cgColor
         cell.layer.borderWidth = 1
         cell.isSelected = false
+        
+        if (self.title == "P1EnemyView")
+        {
+            if (SharingManager.sharedInstance.player1GridUpdate != [])
+            {
+                for (_, number) in SharingManager.sharedInstance.player2GridUpdate.enumerated() {
+                    if (String(number) == cell.myLabel.text)
+                    {
+                        if (SharingManager.sharedInstance.player2SLString.range(of: String(number)) != nil)
+                        {
+                            cell.backgroundColor = UIColor.red
+                        }
+                        else
+                        {
+                            cell.backgroundColor = UIColor.blue
+                            cell.tag = 1
+                        }
+                    }
+                }
+            }
+        }
+        else if (self.title == "P2EnemyView")
+        {
+            if (SharingManager.sharedInstance.player1GridUpdate != [])
+            {
+                for (_, number) in SharingManager.sharedInstance.player1GridUpdate.enumerated() {
+                    if (String(number) == cell.myLabel.text)
+                    {
+                        if (SharingManager.sharedInstance.player1SLString.range(of: String(number)) != nil)
+                        {
+                            cell.backgroundColor = UIColor.red
+                        }
+                        else
+                        {
+                            cell.backgroundColor = UIColor.blue
+                        }
+                    }
+                }
+            }
+        }
         return cell
     }
     
-    // MARK: - UICollectionViewDelegate protocol
-    
+    // When the user selects one of the cell
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         var curPlayer: Int = 0
         var shipLocation: Int = 0
@@ -51,18 +90,18 @@ class EnemyViewController: UIViewController, UICollectionViewDataSource, UIColle
         if (self.title == "P1EnemyView")
         {
             curPlayer = 1
+            cell?.isSelected = true
             shipLocation = appDelegate.player2Model.shipLayout
         }
         else if (self.title == "P2EnemyView")
         {
             curPlayer = 2
+            cell?.isSelected = true
             shipLocation = appDelegate.player1Model.shipLayout
         }
         
         curIndex = indexPath.item + 1
-        print("Current Player = \(curPlayer)")
-        print("Selected Grid Index = \(curIndex)")
-        print("ShipLocation of opponent = \(shipLocation)")
+        
         // call LaunchMissile() from Model
         if (GridModel().launchMissile(index: curIndex, currentPlayer: curPlayer, enemyShipLayout: shipLocation) == "Hit")
         {
@@ -70,7 +109,27 @@ class EnemyViewController: UIViewController, UICollectionViewDataSource, UIColle
         }
         else
         {
-            cell?.backgroundColor = UIColor.cyan
+            cell?.backgroundColor = UIColor.blue
+        }
+        
+        // Check score of the players and display alert message if one of the players won
+        if (GridModel().checkScore() == 1)
+        {
+            let alertController = UIAlertController(title: "GAME OVER", message: "PLAYER 1 WON!", preferredStyle: UIAlertControllerStyle.alert)
+            
+            let cancelAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            
+            alertController.addAction(cancelAction)
+            self.present(alertController, animated: true, completion: nil)
+        }
+        else if (GridModel().checkScore() == 2)
+        {
+            let alertController = UIAlertController(title: "GAME OVER", message: "PLAYER 2 WON!", preferredStyle: UIAlertControllerStyle.alert)
+            
+            let cancelAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            
+            alertController.addAction(cancelAction)
+            self.present(alertController, animated: true, completion: nil)
         }
     }
     
@@ -86,7 +145,7 @@ class EnemyViewController: UIViewController, UICollectionViewDataSource, UIColle
             cell?.isSelected = false
             cell?.backgroundColor = UIColor.white
         }
-        
     }
-
+    
+    
 }
