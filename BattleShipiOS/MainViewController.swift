@@ -16,11 +16,18 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let random1 = Int(arc4random_uniform(UInt32(numShipsLayout)))
+        // Picking a random number for ship layouts
+        var random1 = Int(arc4random_uniform(UInt32(numShipsLayout)))
+        let random2 = Int(arc4random_uniform(UInt32(numShipsLayout)))
+        
+        if (random1 == random2)
+        {
+            random1 = Int(arc4random_uniform(UInt32(numShipsLayout)))
+        }
+        
         appDelegate.player1Model.shipLayout = random1
         print("Random1 = \(random1)")
         
-        let random2 = Int(arc4random_uniform(UInt32(numShipsLayout)))
         appDelegate.player2Model.shipLayout = random2
         print("Random2 = \(random2)")
     }

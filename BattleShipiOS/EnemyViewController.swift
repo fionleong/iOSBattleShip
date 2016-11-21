@@ -10,12 +10,11 @@ import UIKit
 
 class EnemyViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
-    let reuseIdentifier = "cell" // also enter this string as the cell identifier in the storyboard
+    let reuseIdentifier = "cell"
     var count = 1
     let gridSize = 100
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
-    // MARK: - UICollectionViewDataSource protocol
     
     // tell the collection view how many cells to make
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -38,6 +37,7 @@ class EnemyViewController: UIViewController, UICollectionViewDataSource, UIColle
         cell.layer.borderWidth = 1
         cell.isSelected = false
         
+        // displaying all the cells where they have launched missiles previously
         if (self.title == "P1EnemyView")
         {
             if (SharingManager.sharedInstance.player1GridUpdate != [])

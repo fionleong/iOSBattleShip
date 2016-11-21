@@ -11,17 +11,16 @@ import UIKit
 class GridModel {
     
     var shipLayout: Int
-    
     var player1Life: Int = 17
     var player2Life: Int = 17
     var player1GridUpdate: [Int] = []
     var player2GridUpdate: [Int] = []
     
-    
     init() {
         self.shipLayout = 0
     }
     
+    // Read in the file containing all the ship layouts
     func linesFromResource(fileName: String) -> [String] {
         guard let path = Bundle.main.path(forResource: fileName, ofType: nil)
             else {
@@ -37,16 +36,16 @@ class GridModel {
     
     // Take the index that was selected and check the index if it matches the opponent's grid
     func launchMissile(index: Int, currentPlayer: Int, enemyShipLayout: Int) -> String {
+        
         // Read in the lists of preset layout
         let shipLocationArray = GridModel().linesFromResource(fileName: "shiplocation.txt")
         
         // Setting the random ship location
         let shipLocationString = shipLocationArray[enemyShipLayout]
         let shipLocationStringArray = shipLocationString.components(separatedBy: " ")
-        var currentShipLocationStringArray = shipLocationStringArray
+        let currentShipLocationStringArray = shipLocationStringArray
         
-        
-        // get the opponent's shiplocation #
+        // get the opponent's shiplocation # and check if the selected cell match the opponent's
         if (currentPlayer == 1)
         {
             SharingManager.sharedInstance.player2GridUpdate.append(index)
@@ -54,8 +53,6 @@ class GridModel {
                 if (i == String(index))
                 {
                     SharingManager.sharedInstance.player2Life -= 1
-                    print("Player 2 Life = \(SharingManager.sharedInstance.player2Life)")
-                    print("Hit")
                     return "Hit"
                 }
             }
@@ -67,13 +64,10 @@ class GridModel {
                 if (i == String(index))
                 {
                     SharingManager.sharedInstance.player1Life -= 1
-                    print("Player 1 Life = \(SharingManager.sharedInstance.player1Life)")
-                    print("Hit")
                     return "Hit"
                 }
             }
         }
-        print("Missed")
         return "Missed"
     }
     

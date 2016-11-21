@@ -30,7 +30,6 @@ class MyViewController: UIViewController, UICollectionViewDataSource, UICollecti
         
         let shipLocationStringArrayP1 = shipLocationStringP1.components(separatedBy: " ")
         currentShipLocationStringArrayP1 = shipLocationStringArrayP1
-        print("SL P1 = \(currentShipLocationStringArrayP1)")
         
         // Setting the random ship location for P2
         let shipLocationStringP2 = shipLocationArray[appDelegate.player2Model.shipLayout]
@@ -38,13 +37,10 @@ class MyViewController: UIViewController, UICollectionViewDataSource, UICollecti
         
         let shipLocationStringArrayP2 = shipLocationStringP2.components(separatedBy: " ")
         currentShipLocationStringArrayP2 = shipLocationStringArrayP2
-        print("SL P2 = \(currentShipLocationStringArrayP2)")
         
         // Sort gridUpdate array
         SharingManager.sharedInstance.player1GridUpdate = SharingManager.sharedInstance.player1GridUpdate.sorted { $0 < $1 }
-        print("Sorted P1Grid = \(SharingManager.sharedInstance.player1GridUpdate)")
         SharingManager.sharedInstance.player2GridUpdate = SharingManager.sharedInstance.player2GridUpdate.sorted { $0 < $1 }
-        print("Sorted P2Grid = \(SharingManager.sharedInstance.player2GridUpdate)")
     }
     
     // MARK: - UICollectionViewDataSource protocol
