@@ -9,8 +9,8 @@
 import Foundation
 
 class SharingManager {
-    var player1Life: Int = 1
-    var player2Life: Int = 1
+    var player1Life: Int = 17
+    var player2Life: Int = 17
     var player1GridUpdate: [Int] = []
     var player2GridUpdate: [Int] = []
     var player1SLString: String = ""
