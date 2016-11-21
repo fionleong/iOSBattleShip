@@ -58,7 +58,7 @@ class MyViewController: UIViewController, UICollectionViewDataSource, UICollecti
         cell.myLabel.text = String(count)
         count += 1
         
-        //cell.myLabel.textColor = UIColor.clear
+        cell.myLabel.textColor = UIColor.clear
         cell.backgroundColor = UIColor.white
         cell.layer.borderColor = UIColor.black.cgColor
         cell.layer.borderWidth = 1

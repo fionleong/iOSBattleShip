@@ -31,7 +31,7 @@ class EnemyViewController: UIViewController, UICollectionViewDataSource, UIColle
         cell.myLabel.text = String(count)
         count += 1
         
-        //cell.myLabel.textColor = UIColor.clear
+        cell.myLabel.textColor = UIColor.clear
         cell.backgroundColor = UIColor.white
         cell.layer.borderColor = UIColor.black.cgColor
         cell.layer.borderWidth = 1
@@ -132,20 +132,4 @@ class EnemyViewController: UIViewController, UICollectionViewDataSource, UIColle
             self.present(alertController, animated: true, completion: nil)
         }
     }
-    
-    // change background color when user touches cell
-    func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {
-        let cell = collectionView.cellForItem(at: indexPath)
-        if (cell?.isSelected == false)
-        {
-            cell?.isSelected = true
-            cell?.backgroundColor = UIColor.yellow
-        }
-        else {
-            cell?.isSelected = false
-            cell?.backgroundColor = UIColor.white
-        }
-    }
-    
-    
 }
